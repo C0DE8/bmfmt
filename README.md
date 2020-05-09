@@ -4,15 +4,15 @@
 
 ``` shell
 # Stable version
-go get -u -v gopkg.in/ffmt.v1
+go get -u -v gopkg.in/bmfmt.v1
 
 # Latest version
-go get -u -v github.com/go-ffmt/ffmt
+go get -u -v github.com/c0de8/bmfmt
 ```
 
 ## Usage
 
-[API Documentation](https://godoc.org/github.com/go-ffmt/ffmt)
+[API Documentation](https://godoc.org/github.com/c0de8/bmfmt)
 
 [Examples](https://github.com/c0de8/bmfmt/blob/master/examples/main.go)
 
