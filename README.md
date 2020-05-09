@@ -3,10 +3,10 @@
 ## Install
 
 ``` shell
-# Stable version
+# stable version
 go get -u -v gopkg.in/c0de8/bmfmt.v0
 
-# Latest version
+# latest version (may be unstable)
 go get -u -v github.com/c0de8/bmfmt
 ```
 

@@ -60,6 +60,7 @@ func printMapKeyStringWithSliceOfStrings(aMap map[string][]string) {
 	}
 }
 
+// getMaxLength detects the max. length of the key, value and value count
 func getMaxLength(aMap map[string][]string) (int, int, int) {
 	var maxKeyLength = 0
 	var maxValueLength = 0
@@ -101,14 +102,17 @@ func rightPad(s string, padStr string, pLen int) string {
 	return s + strings.Repeat(padStr, padLen)
 }
 
+// getArgType return the argument type (Kind) [type: reflect.Kind]
 func getArgType(a interface{}) reflect.Kind {
 	return reflect.TypeOf(a).Kind()
 }
 
+// getMapKeyType return the map key type (Kind) [type: reflect.Kind]
 func getMapKeyType(a interface{}) reflect.Kind {
 	return reflect.TypeOf(a).Key().Kind()
 }
 
+// getMapValueType return the map element type (Kind) [type: reflect.Kind]
 func getMapValueType(a interface{}) reflect.Kind {
 	return reflect.TypeOf(a).Elem().Kind()
 }
