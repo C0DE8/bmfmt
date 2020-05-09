@@ -1,3 +1,5 @@
+# Created by .ignore support plugin (hsz.mobi)
+### Go template
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -16,3 +18,4 @@ main
 
 # Dependency directories (remove the comment below to include it)
 # vendor/
+

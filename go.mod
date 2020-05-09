@@ -1,4 +1,4 @@
-module tdd1/bmfmt/bmfmt
+module bmfmt
 
 go 1.14
 
