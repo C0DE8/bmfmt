@@ -5,7 +5,7 @@
 *.so
 *.dylib
 
-# possible linux binares
+# possible linux binaries
 main
 
 # Test binary, built with `go test -c`
