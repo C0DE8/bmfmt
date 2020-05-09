@@ -4,7 +4,7 @@
 
 ``` shell
 # Stable version
-go get -u -v gopkg.in/bmfmt.v1
+go get -u -v gopkg.in/c0de8/bmfmt.v0
 
 # Latest version
 go get -u -v github.com/c0de8/bmfmt
