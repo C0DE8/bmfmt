@@ -27,129 +27,34 @@ func main() {
 	example()
 }
 
-type mt struct {
-	String string
-	Int    int
-	Slice  []int
-	Map    map[string]interface{}
-}
-
 func example() {
-	m := mt{
-		"hello world",
-		100,
-		[]int{1, 2, 3, 4, 5, 6},
-		map[string]interface{}{
-			"A":  123,
-			"BB": 456,
-		},
+	
+	m := map[string][]string{
+		"Warc-Type": { "response" }
 	}
-
+	
 	fmt.Println(m) // fmt the default formatting.
 	/*
-		{hello world 100 [1 2 3 4 5 6] map[BB:456 A:123]}
+		map[  ]
 	*/
 
-	ffmt.Puts(m) // More friendly formatting.
+	bmfmt.Beautify(m) // More friendly formatting.
 	/*
-		{
-		 String: "hello world"
-		 Int:    100
-		 Slice:  [
-		  1 2 3
-		  4 5 6
-		 ]
-		 Map: {
-		  "A":  123
-		  "BB": 456
-		 }
-		}
+[ "Warc-Type"            string(  9) ]: "response"                                                                                           string(  8)
+[ "Warc-Date"            string(  9) ]: "2014-08-02T09:52:13Z"                                                                               string( 20)
+[ "Content-Length"       string( 14) ]: "43428"                                                                                              string(  5)
+[ "Warc-Payload-Digest"  string( 19) ]: "sha1:M63W6MNGFDWXDSLTHF7GWUPCJUH4JK3J"                                                              string( 37)
+[ "Warc-Block-Digest"    string( 17) ]: "sha1:YHKQUSBOS4CLYFEKQDVGJ457OAPD6IJO"                                                              string( 37)
+[ "Warc-Truncated"       string( 14) ]: "length"                                                                                             string(  6)
+[ "Warc-Record-Id"       string( 14) ]: "<urn:uuid:ffbfb0c0-6456-42b0-af03-3867be6fc09f>", "<urn:uuid:ffbfb0c0-6456-42b0-af03-xxxxxxxxxxx>"  string( 97)
+[ "Content-Type"         string( 12) ]: "application/http; msgtype=response"                                                                 string( 34)
+[ "Warc-Warcinfo-Id"     string( 16) ]: "<urn:uuid:3169ca8e-39a6-42e9-a4e3-9f001f067bdf>"                                                    string( 47)
+[ "Warc-Concurrent-To"   string( 18) ]: "<urn:uuid:d99f2a24-158a-4c77-bb0a-3cccd40aad56>"                                                    string( 47)
+[ "Warc-Ip-Address"      string( 15) ]: "212.58.244.61"                                                                                      string( 13)
+[ "Warc-Target-Uri"      string( 15) ]: "http://news.bbc.co.uk/2/hi/africa/3414345.stm"                                                      string( 45)
+
 	*/
 
-	ffmt.Print(m) // Same "Puts" but String unadded '"'.
-	/*
-		{
-		 String: hello world
-		 Int:    100
-		 Slice:  [
-		  1 2 3
-		  4 5 6
-		 ]
-		 Map: {
-		  A:  123
-		  BB: 456
-		 }
-		}
-	*/
-
-	ffmt.P(m) // Format data and types.
-	/*
-		main.mt{
-		 String: string("hello world")
-		 Int:    int(100)
-		 Slice:  []int[
-		  int(1) int(2) int(3)
-		  int(4) int(5) int(6)
-		 ]
-		 Map: map[string]interface {}{
-		  string("A"):  int(123)
-		  string("BB"): int(456)
-		 }
-		}
-	*/
-
-	ffmt.Pjson(m) // Format it in json style.
-	/*
-		{
-		 "Int": 100
-		,"Map": {
-		  "A":  123
-		 ,"BB": 456
-		 }
-		,"Slice": [
-		  1,2,3
-		 ,4,5,6
-		 ]
-		,"String": "hello world"
-		}
-	*/
-
-	m0 := ffmt.ToTable(m, m) // Break the fields into tables.
-	ffmt.Puts(m0)
-	/*
-		[
-		 [
-		  "String" "Int"
-		  "Slice"  "Map"
-		 ]
-		 [
-		  "hello world"   "100"
-		  "[1 2 3 4 5 6]" "map[A:123 BB:456]"
-		 ]
-		]
-	*/
-
-	m1 := ffmt.FmtTable(m0) // [][]string Table format.
-	ffmt.Puts(m1)
-	/*
-		[
-		 "String      Int Slice         Map               "
-		 "hello world 100 [1 2 3 4 5 6] map[A:123 BB:456] "
-		]
-	*/
-
-	ffmt.Mark("hello") // Mark position.
-	/*
-		main.go:124  hello
-	*/
-
-	ffmt.Print(ffmt.BytesViewer("Hello world! Hello All!"))
-	/*
-  |  Address | Hex                                             | Text             |
-  | -------: | :---------------------------------------------- | :--------------- |
-  | 00000000 | 48 65 6c 6c 6f 20 77 6f 72 6c 64 21 20 48 65 6c | Hello world! Hel |
-  | 00000010 | 6c 6f 20 41 6c 6c 21                            | lo All!          |
-	*/
 }
 
 
