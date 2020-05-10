@@ -59,4 +59,4 @@ func example() {
 
 ## License
 
-bmfmt is licensed under the MIT License. See [LICENSE](https://github.com/go-ffmt/ffmt/blob/master/LICENSE) for the full license text.
+bmfmt is licensed under the MIT License. See [LICENSE](https://github.com/c0de8/bmfmt/blob/master/LICENSE) for the full license text.
