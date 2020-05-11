@@ -16,14 +16,14 @@ go get -u -v github.com/c0de8/bmfmt
 
 ## Supported Structures
 
-Currently ``github.com/c0de8/bmfmt`` support the following map structures:
-
 - map[string]string
 - map[string][]string
 
+More structures are in implementation.
+
 ## Usage
 
-[API Documentation](https://godoc.org/github.com/c0de8/bmfmt)
+[API Documentation](https://pkg.go.dev/github.com/c0de8/bmfmt?tab=doc)
 
 [Examples](https://github.com/c0de8/bmfmt/blob/master/examples/main.go)
 
