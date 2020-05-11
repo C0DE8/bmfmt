@@ -19,15 +19,33 @@ func TestBeautifyCauseAnErrorOnNonMap(t *testing.T) {
 	assert.Equal(t, "given argument is NOT a map", err.Error())
 }
 
-// TestBeautifyOutputASimpleMap test a valid map[string][]string output
-func TestBeautifyOutputASimpleMap(t *testing.T) {
+// TestBeautifyOutputSimpleMapWithStringKeysAndStringValues test a simple map with string keys and string values
+func TestBeautifyOutputSimpleMapWithStringKeysAndStringValues(t *testing.T) {
+
+	var err error
+	candidateSingleValue := map[string]string{
+		"a key": "a short value",
+	}
+
+	expectedOutputSingleValue := `[ "a key"  string(  5) ]: "a short value"  string( 13)
+`
+	output := capturer.CaptureStdout(func() {
+		err = Beautify(candidateSingleValue)
+	})
+
+	assert.NoError(t, err, "nil is expected")
+	assert.Equal(t, expectedOutputSingleValue, output, "beautified map output expected (1)")
+}
+
+// TestBeautifyOutputSimpleMapWithStringKeysAndSliceOfStringValues test a valid map[string][]string output
+func TestBeautifyOutputSimpleMapWithStringKeysAndSliceOfStringValues(t *testing.T) {
 
 	var err error
 	candidateSingleValue := map[string][]string{
 		"a key": {"a single value"},
 	}
 
-	// due to the fact, that maps are NOT sorted, the output order may vary, so we ned to test both orderings
+	// due to the fact, that maps are NOT sorted, the output order may vary, so we can test 1 element in map only
 	expectedOutputSingleValue := `[ "a key"  string(  5) ]: "a single value"  string( 14)
 `
 	output := capturer.CaptureStdout(func() {
