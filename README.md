@@ -14,6 +14,13 @@ go get -u -v gopkg.in/c0de8/bmfmt.v0
 go get -u -v github.com/c0de8/bmfmt
 ```
 
+## Supported Structures
+
+Currently ``github.com/c0de8/bmfmt`` support the following map structures:
+
+- map[string]string
+- map[string][]string
+
 ## Usage
 
 [API Documentation](https://godoc.org/github.com/c0de8/bmfmt)
