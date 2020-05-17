@@ -1,3 +1,4 @@
+// Package bmfmt provides a function to output a map in a human (beautified) readable way
 package bmfmt
 
 import (
@@ -22,7 +23,8 @@ var valDelim = map[string]string{
 }
 
 var rowTmpl = keyDelim["open"] + " %v  %v " + keyDelim["close"] +
-	keyValueSep + valDelim["open"] + "%v  %v" + valDelim["close"] + "\n"
+	keyValueSep +
+	valDelim["open"] + "%v  %v" + valDelim["close"] + "\n"
 
 // Beautify prints a given map (any key and value type) to  better readable format
 func Beautify(a interface{}) error {
@@ -57,7 +59,7 @@ func Beautify(a interface{}) error {
 		printMapKeyStringWithSliceOfStrings(convertedArg)
 
 	default:
-		// handle unknown type
+		// handle unknown map type/structure
 		return errors.New(fmt.Sprintf("(currently) unknown map structure: map[%v]%v", keyType, valueType))
 	}
 
