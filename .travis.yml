@@ -1,0 +1,25 @@
+# use the latest ubuntu environment (18.04) available on travis
+dist: bionic
+
+# the programming language to use
+language: go
+
+# you don't need to test on very old versions of the Go compiler. It's the user's
+# responsibility to keep their compiler up to date.
+go:
+  - 1.14.3
+  - master
+
+# only clone the most recent commit.
+git:
+  depth: 1
+
+os: osx
+
+#  email me the results of the test runs.
+notifications:
+  email:
+    recipients:
+      - travis-ci.bjoern@ellebrecht.name
+    on_success: change
+    on_failure: always
