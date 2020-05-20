@@ -3,6 +3,8 @@
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/c0de8/bmfmt/graphs/commit-activity)
 [![Github all releases](https://img.shields.io/github/downloads/c0de8/bmfmt/total.svg)](https://GitHub.com/c0de8/bmfmt/releases/)
+[![Build Status](https://travis-ci.com/C0DE8/bmfmt.svg?branch=master)](https://travis-ci.com/C0DE8/bmfmt)
+
 
 ## Install
 
