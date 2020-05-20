@@ -8,13 +8,21 @@ language: go
 # responsibility to keep their compiler up to date.
 go:
   - 1.14.3
-  - master
 
 # only clone the most recent commit.
 git:
   depth: 1
 
-os: osx
+# CPU architecture(s)
+arch:
+  - amd64
+  - arm64
+
+# operating system(s)
+os:
+  - linux
+  - windows
+  - osx
 
 #  email me the results of the test runs.
 notifications:
